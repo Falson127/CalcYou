@@ -97,6 +97,7 @@ fun RowScope.CalculatorButton(
             .combinedClickable(
                 onClick = {
                     onClick.invoke()
+                    haptic.performHapticFeedback(HapticFeedbackType.KeyboardTap)
                     view.playSoundEffect(SoundEffectConstants.CLICK)
                 }, onLongClick = {
                     if (onLongClick != null) {
